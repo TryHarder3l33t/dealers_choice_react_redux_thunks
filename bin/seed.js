@@ -1,7 +1,7 @@
-const { conn } = require("../db/db");
+const { db } = require("../db/db");
 
 const seed = () => {
-  conn.sync({ force: true });
+  db.sync({ force: true });
 };
 
 module.exports = seed;
