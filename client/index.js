@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getUsers, getCandy } from "../store";
 import Nav from "./Nav";
-import Users from "./users";
+import Users from "./Users";
 import Candy from "./Candy";
 // //TODO
 // import TheForm from "./Form";
