@@ -1,14 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
+import { deleteUser } from "../store";
 
-const Users = ({ users }) => {
+const Users = ({ users, destroy }) => {
   return (
     <ul>
       {users.map((user) => (
-        <li key={user.id}>{user.name}</li>
+        <div key={user.id}>
+          <li> {user.name}</li>
+          <button onClick={() => destroy(user)}>Delete</button>
+        </div>
       ))}
     </ul>
   );
 };
 
-export default connect((state) => state)(Users);
+const mapDispatch = (dispatch) => {
+  return {
+    destroy: (user) => {
+      dispatch(deleteUser(user));
+    },
+  };
+};
+
+export default connect((state) => state, mapDispatch)(Users);

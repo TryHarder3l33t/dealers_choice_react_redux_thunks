@@ -8,6 +8,13 @@ const usersReducer = (state = [], action) => {
     console.log(`This is the store ${action.users}`);
     state = action.users;
   }
+  if (action.type === "DESTROY_TASK") {
+    const users = state.filter((user) => user.id !== action.user.id);
+    console.log(`This is the store ${action.users}`);
+    return users;
+    //state = action.users;
+  }
+
   return state;
 };
 const candyReducer = (state = [], action) => {
@@ -52,6 +59,13 @@ const getCandy = () => {
   };
 };
 
+const deleteUser = (user) => {
+  return async (dispatch) => {
+    await axios.delete(`/api/users/${user.id}`);
+    dispatch({ type: "DESTROY_TASK", user });
+  };
+};
+
 export default store;
 //Named export
-export { getUsers, getCandy };
+export { getUsers, getCandy, deleteUser };
