@@ -15,6 +15,11 @@ const seed = async () => {
       type: "Chocolate",
       price: "19.99",
     });
+    const jawBreakers = await Candy.create({
+      name: "Jaw Breakers",
+      type: "Candy",
+      price: "9.99",
+    });
 
     const skittles = await Candy.create({
       name: "Skittles",
