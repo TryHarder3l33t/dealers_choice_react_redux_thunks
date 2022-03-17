@@ -13,7 +13,7 @@ class _App extends Component {
     return (
       <div>
         <Nav></Nav>
-        <h2>Hello From The Component</h2>
+        <h2>Dealers Choice React Redux Thunks</h2>
 
         <Users />
         <Candy />

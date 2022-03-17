@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 const Nav = ({ users, candy }) => {
   return (
     <nav>
-      <a href="#users">Users {users.length}</a>
-      <a href="#candy">Candy {candy.length}</a>
+      <p>Users {users.length}</p>
+      <p>Candy {candy.length}</p>
     </nav>
   );
 };
