@@ -1,13 +1,52 @@
 const { db } = require("../db/db");
+const Candy = require("../db/models/Candy");
 const User = require("../db/models/User");
 
 const seed = async () => {
   try {
     await db.sync({ force: true });
-    const albert = await User.create({
+    const hersheyKisses = await Candy.create({
+      name: "Hershey Kisses",
+      quantity: "500",
+      price: "29.99",
+    });
+    const snickers = await Candy.create({
+      name: "Snickers",
+      type: "Chocolate",
+      price: "19.99",
+    });
+    const skittles = await Candy.create({
+      name: "Skittles",
+      type: "candy",
+      quantity: "3000",
+      price: "12.99",
+    });
+    const bazooka = await Candy.create({
+      name: "Bazooka",
+      type: "Gum",
+      price: "34.99",
+    });
+    const eric = await User.create({
       name: "Eric",
-      nickName: "TryHarder",
-      email: "TryHarder3l33t@gmail.com",
+      nickName: "Jeff",
+      email: "TSuper@gmail.com",
+      phone: "441-347-3387",
+    });
+    const bobby = await User.create({
+      name: "Bobby",
+      nickName: "Ronald",
+      phone: "555-777-9311",
+    });
+    const tom = await User.create({
+      name: "Tom",
+      nickName: "One Eye",
+      email: "badggs@gmail.com",
+    });
+    const jeff = await User.create({
+      name: "Jeff",
+      nickName: "Macho",
+      email: "davidw@gmail.com",
+      phone: "845-234-1234",
     });
   } catch (error) {
     console.log(error);
