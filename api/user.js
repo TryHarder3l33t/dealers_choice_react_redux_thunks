@@ -12,4 +12,16 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    const deleted = await User.findByPk(req.params.id);
+
+    await deleted.destroy();
+    console.log(`They are gone ${req.params.id}`);
+    res.send(deleted);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;

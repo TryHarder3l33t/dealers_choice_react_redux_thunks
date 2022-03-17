@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { connect } from "react-redux";
 import { getUsers, getCandy } from "../store";
 import Nav from "./Nav";
@@ -15,6 +14,7 @@ class _App extends Component {
       <div>
         <Nav></Nav>
         <h2>Hello From The Component</h2>
+
         <Users />
         <Candy />
       </div>
@@ -27,12 +27,8 @@ const App = connect(
   (dispatch) => {
     return {
       init: async () => {
-        const users = (await axios.get("/api/users")).data;
-        const candy = (await axios.get("/api/candy")).data;
-        console.log(`This is the axios call ${JSON.stringify(users)}`);
-        console.log(users);
-        dispatch(getUsers(users));
-        dispatch(getCandy(candy));
+        dispatch(getUsers());
+        dispatch(getCandy());
       },
     };
   }
