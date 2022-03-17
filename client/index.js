@@ -4,6 +4,8 @@ import { getUsers, getCandy } from "../store";
 import Nav from "./Nav";
 import Users from "./users";
 import Candy from "./Candy";
+// //TODO
+// import TheForm from "./Form";
 
 class _App extends Component {
   componentDidMount() {
@@ -13,10 +15,9 @@ class _App extends Component {
     return (
       <div>
         <Nav></Nav>
-        <h2>Dealers Choice React Redux Thunks</h2>
-
         <Users />
         <Candy />
+        {/* <TheForm /> */}
       </div>
     );
   }

@@ -15,6 +15,7 @@ const seed = async () => {
       type: "Chocolate",
       price: "19.99",
     });
+
     const skittles = await Candy.create({
       name: "Skittles",
       type: "candy",
@@ -44,6 +45,28 @@ const seed = async () => {
     });
     const jeff = await User.create({
       name: "Jeff",
+      nickName: "Macho",
+      email: "davidw@gmail.com",
+      phone: "845-234-1234",
+    });
+    const johnny = await User.create({
+      name: "Johnny",
+      nickName: "Jeff",
+      email: "TSuper@gmail.com",
+      phone: "441-347-3387",
+    });
+    const gilbert = await User.create({
+      name: "Gilbert",
+      nickName: "Ronald",
+      phone: "555-777-9311",
+    });
+    const ronald = await User.create({
+      name: "Ronald",
+      nickName: "One Eye",
+      email: "badggs@gmail.com",
+    });
+    const alice = await User.create({
+      name: "Alice",
       nickName: "Macho",
       email: "davidw@gmail.com",
       phone: "845-234-1234",

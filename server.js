@@ -6,7 +6,7 @@ const path = require("path");
 app.listen(process.env.PORT || port, () => {
   console.log(`Listening on port ${port}`);
 });
-//normal posts the other is form posts
+
 app.use(express.json());
 app.use("/dist", express.static(path.join(__dirname, "dist")));
 app.get("/", (req, res) => {

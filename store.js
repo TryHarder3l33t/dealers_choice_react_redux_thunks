@@ -5,21 +5,17 @@ import logger from "redux-logger";
 
 const usersReducer = (state = [], action) => {
   if (action.type === "GET_USERS") {
-    console.log(`This is the store ${action.users}`);
     state = action.users;
   }
+
   if (action.type === "DESTROY_TASK") {
     const users = state.filter((user) => user.id !== action.user.id);
-    console.log(`This is the store ${action.users}`);
     return users;
-    //state = action.users;
   }
-
   return state;
 };
 const candyReducer = (state = [], action) => {
   if (action.type === "GET_CANDY") {
-    console.log(`This is the candy store ${action.candy}`);
     state = action.candy;
   }
   return state;
@@ -52,6 +48,7 @@ const _getCandy = (candy) => {
     candy,
   };
 };
+
 const getCandy = () => {
   return async (dispatch) => {
     const candy = (await axios.get("/api/candy")).data;
@@ -69,3 +66,29 @@ const deleteUser = (user) => {
 export default store;
 //Named export
 export { getUsers, getCandy, deleteUser };
+
+// //TODO
+// const formChange = (onChange) => {
+//   return (dispatch) => {
+//     const target = onChange.target;
+//     const value = target.value;
+//     const name = target.name;
+//     const data = { [name]: value };
+
+//     dispatch(_formChange(data));
+//   };
+// };
+
+// //TODO
+// const _formChange = (data) => {
+//   return {
+//     type: "FORM_CHANGE",
+//     data,
+//   };
+// };
+
+//     //TODO
+//   if (action.type === "FORM_CAHNGE") {
+//     const change = [...state, action.data];
+//     return change;
+//   }
